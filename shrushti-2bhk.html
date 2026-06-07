@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrushti 2BHK | Kalaarti Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B1A1A;
+            --cream: #F5F1ED;
+            --dark: #1a1a1a;
+            --light-gray: #e8e8e8;
+            --accent-blue: #4A5859;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Header */
+        .project-header {
+            margin-top: 100px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--cream) 0%, #f9f6f3 100%);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .project-header h1 {
+            margin-bottom: 1rem;
+        }
+
+        .project-meta-header {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .introduction {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .project-header {
+                padding: 2rem 5%;
+                margin-top: 80px;
+            }
+
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-meta-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Kalaarti Studio</a>
+        <ul class="nav-links">
+            <li><a href="index.html#portfolio">Back to Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <a href="index.html#portfolio" class="back-button">← Back to Portfolio</a>
+        <h1>Shrushti 2BHK Apartment</h1>
+        <div class="project-meta-header">
+            <div class="meta-item">
+                <div class="meta-label">Type</div>
+                <div class="meta-value">Residential</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Configuration</div>
+                <div class="meta-value">2 BHK</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Style</div>
+                <div class="meta-value">Contemporary</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Status</div>
+                <div class="meta-value">Completed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="project-content">
+        <div class="section">
+            <div class="introduction">
+                <p>This residence is designed with a calm, contemporary approach that balances soft neutrals, warm wood tones, and subtle colour accents. The palette features warm whites and greys, layered with sage green, blush, muted blue, and mustard to add depth without overpowering the space.</p>
+                <p>Clean lines, gentle curves, and minimal detailing define the interiors, while textured elements like upholstered panels and fluted surfaces introduce softness and visual interest. Thoughtfully planned layouts and layered lighting create spaces that feel open, warm, and inviting.</p>
+                <p>The overall design reflects a modern, serene, and timeless aesthetic, where colour and materiality quietly enhance everyday living.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Living Spaces</h2>
+
+            <!-- Image 1: Living Area -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/shrushti-hq/13.png" alt="Living Area" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Living Area</h3>
+                    <p>Open, inviting living space with soft color palette. The living area is designed to be a welcoming sanctuary where family and guests can relax in comfort. Soft neutrals and warm wood tones create an atmosphere of tranquility and sophistication.</p>
+                </div>
+            </div>
+
+            <!-- Image 2: Kitchen & Dining -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/shrushti-hq/14.png" alt="Kitchen & Dining" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Kitchen & Dining</h3>
+                    <p>Functional kitchen with contemporary design that seamlessly flows into the dining area. Clean lines and efficient layout encourage cooking and gathering, while quality materials ensure durability and timeless appeal.</p>
+                </div>
+            </div>
+
+            <!-- Image 3: Mood Board -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/shrushti-hq/15.png" alt="Design Palette" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Design Palette</h3>
+                    <p>Soft neutrals with subtle color accents. The carefully curated color palette - featuring warm whites, greys, sage green, blush, muted blue, and mustard - creates depth and visual interest without overwhelming the spaces. Each color is chosen to enhance the serene, contemporary aesthetic.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Bedrooms</h2>
+
+            <!-- Image 4: Master Bedroom -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/shrushti-hq/16.png" alt="Master Bedroom" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Master Bedroom</h3>
+                    <p>The master bedroom is envisioned as a refined retreat, where form and colour work in quiet harmony. An upholstered headboard in muted grey tones, paired with a circular mirror, introduces softness and visual balance. A restrained palette of warm neutrals, subtle greens, and natural wood accents reinforces a sense of calm, spatial clarity, and understated elegance.</p>
+                </div>
+            </div>
+
+            <!-- Image 5: Daughter's Room -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/shrushti-hq/18.png" alt="Daughter's Bedroom" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Daughter's Room</h3>
+                    <p>The daughter's bedroom is conceived as a calm, contemporary space defined by soft blush, muted blue, and natural wood tones. A delicate hand-painted wall artwork adds a personal, artistic layer while maintaining the room's minimal and functional character. The space balances playfulness with sophistication.</p>
+                </div>
+            </div>
+
+            <!-- Image 6: Bedroom Details -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/shrushti-hq/19.png" alt="Design Details" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Design Details</h3>
+                    <p>Thoughtful materials and textures throughout the apartment. From upholstered panels to fluted surfaces, every element is chosen to introduce softness and visual interest while maintaining the clean, minimal aesthetic that defines contemporary design.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Design Philosophy</h2>
+            <div style="padding: 2rem; background: white; border-left: 4px solid var(--primary);">
+                <p>Every element in this residence has been carefully considered to create a space that is both beautiful and functional. The design emphasizes quality materials, thoughtful spatial planning, and a curated color palette that creates a sense of peace and sophistication.</p>
+                <p>From the kitchen's clean lines to the bedrooms' soft textures, the apartment tells a story of contemporary living where comfort and style are beautifully balanced.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kalaarti Studio. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Every wall tells a story</p>
+    </footer>
+</body>
+</html>

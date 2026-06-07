@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One World 3BHK | Kalaarti Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B1A1A;
+            --cream: #F5F1ED;
+            --dark: #1a1a1a;
+            --light-gray: #e8e8e8;
+            --accent-blue: #4A5859;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Header */
+        .project-header {
+            margin-top: 100px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--cream) 0%, #f9f6f3 100%);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .project-header h1 {
+            margin-bottom: 1rem;
+        }
+
+        .project-meta-header {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .introduction {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .project-header {
+                padding: 2rem 5%;
+                margin-top: 80px;
+            }
+
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-meta-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Kalaarti Studio</a>
+        <ul class="nav-links">
+            <li><a href="index.html#portfolio">Back to Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <a href="index.html#portfolio" class="back-button">← Back to Portfolio</a>
+        <h1>One World 3BHK Apartment</h1>
+        <div class="project-meta-header">
+            <div class="meta-item">
+                <div class="meta-label">Location</div>
+                <div class="meta-value">Rajkot, Gujarat</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Area</div>
+                <div class="meta-value">1400 sq.ft.</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Type</div>
+                <div class="meta-value">Residential</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Status</div>
+                <div class="meta-value">Completed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="project-content">
+        <div class="section">
+            <div class="introduction">
+                <p>The residence follows a modern Indian design approach with a cohesive neutral palette of beige, brown, warm grey, and soft white, accented with selective bright colours to add vibrancy and character.</p>
+                <p>The living area features a black marble–finish TV unit with veneer and black painted glass accents. The dining space is defined by olive green tones, soft white leather seating, and a veneer-framed mirror wall artifact.</p>
+                <p>The master bedroom is designed in beige and brown hues with tropical wallpaper and bronze mirror detailing, creating a calm yet refined private retreat.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Living Spaces</h2>
+
+            <!-- Image 1: Living Area -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/one-world-hq/23.png" alt="Living Area" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Living Area</h3>
+                    <p>Contemporary living with black marble TV unit. The living area features a striking black marble-finish TV unit with veneer and black painted glass accents, creating a modern focal point that anchors the space while maintaining elegant simplicity.</p>
+                </div>
+            </div>
+
+            <!-- Image 2: Dining Area -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/one-world-hq/24.png" alt="Dining Area" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Dining Area</h3>
+                    <p>Olive green accents with elegant furniture. The dining space is defined by rich olive green tones, soft white leather seating, and a veneer-framed mirror wall artifact that adds depth and sophistication to the gathering space.</p>
+                </div>
+            </div>
+
+            <!-- Image 3: Color Palette -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/one-world-hq/22.png" alt="Design Palette" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Design Palette</h3>
+                    <p>Modern Indian design approach with a cohesive neutral palette of beige, brown, warm grey, and soft white, accented with selective bright colours. This thoughtful combination creates a harmonious environment that blends traditional warmth with contemporary style.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Bedrooms</h2>
+
+            <!-- Image 4: Master Bedroom -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/one-world-hq/23.png" alt="Master Bedroom" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Master Bedroom</h3>
+                    <p>The master bedroom is designed as a calm and private retreat, focusing on comfort, warmth, and visual continuity. A neutral palette of beige, brown, and soft grey creates a soothing base, supporting a relaxed and balanced atmosphere.</p>
+                    <p>A layered false ceiling with recessed profiles and warm cove lighting enhances spatial depth and creates an intimate, restful mood. The bed-back wall is finished with tropical wallpaper and bronze mirror detailing.</p>
+                </div>
+            </div>
+
+            <!-- Image 5: Kid's Bedroom -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/one-world-hq/24.png" alt="Kid's Bedroom" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Kid's Bedroom</h3>
+                    <p>The kid's bedroom is designed to be calm, cheerful, and functional. A neutral base of white and beige keeps the space light, while mustard yellow accents add warmth and a playful character.</p>
+                    <p>A soft board is integrated with the cushioned bed headboard and study table, providing a cohesive surface for notes and artwork. Wooden finishes introduce a natural, grounding feel to the room.</p>
+                </div>
+            </div>
+
+            <!-- Image 6: Design Details -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/one-world-hq/22.png" alt="Design Details" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Design Details</h3>
+                    <p>Thoughtful spatial planning ensures every room serves multiple purposes while maintaining aesthetic harmony. From storage solutions to flexible furniture arrangements, the design prioritizes both form and function.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Design Highlights</h2>
+            <div style="padding: 2rem; background: white; border-left: 4px solid var(--primary);">
+                <p>This residence exemplifies modern Indian design sensibilities, where traditional warmth meets contemporary sophistication. The careful selection of materials, colors, and spatial organization creates a home that is both aesthetically refined and wonderfully livable.</p>
+                <p>Each room tells a story of comfort and elegance, from the minimalist kitchen to the jewel-toned dining area, and the serene bedrooms that offer peaceful retreats.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kalaarti Studio. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Every wall tells a story</p>
+    </footer>
+</body>
+</html>

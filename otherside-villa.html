@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otherside Weekend Villa | Kalaarti Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B1A1A;
+            --cream: #F5F1ED;
+            --dark: #1a1a1a;
+            --light-gray: #e8e8e8;
+            --accent-blue: #4A5859;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Header */
+        .project-header {
+            margin-top: 100px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--cream) 0%, #f9f6f3 100%);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .project-header h1 {
+            margin-bottom: 1rem;
+        }
+
+        .project-meta-header {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .introduction {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .project-header {
+                padding: 2rem 5%;
+                margin-top: 80px;
+            }
+
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-meta-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Kalaarti Studio</a>
+        <ul class="nav-links">
+            <li><a href="index.html#portfolio">Back to Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <a href="index.html#portfolio" class="back-button">← Back to Portfolio</a>
+        <h1>Otherside Weekend Villa</h1>
+        <div class="project-meta-header">
+            <div class="meta-item">
+                <div class="meta-label">Location</div>
+                <div class="meta-value">Gandhinagar</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Area</div>
+                <div class="meta-value">3100 sq.ft.</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Type</div>
+                <div class="meta-value">Residential</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Status</div>
+                <div class="meta-value">Completed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="project-content">
+        <div class="section">
+            <div class="introduction">
+                <p>This weekend villa is designed as a serene contemporary retreat inspired by the moon and its quiet luminosity. A double-height living space with a suspended swing forms the spatial core, enhanced by natural light, soft neutral tones, and subtle blue accents.</p>
+                <p>Clean lines, layered wall paneling, and controlled material transitions create a calm, cohesive environment rooted in both concept and comfort. Every space is thoughtfully designed to facilitate relaxation and connection with nature.</p>
+                <p>The design embraces minimalism while maintaining warmth and livability, creating the perfect sanctuary for weekend escapes from the city.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Spaces</h2>
+
+            <!-- Image 1: Entrance Area -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/otherside-hq/25.png" alt="Entrance Area" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Entrance Area</h3>
+                    <p>Serene introduction to the villa. The entrance sets the tone for the entire space, welcoming guests with a sense of calm and anticipation. Every element from the threshold onwards has been carefully considered to evoke the tranquility that defines this weekend retreat.</p>
+                </div>
+            </div>
+
+            <!-- Image 2: Double Height Space -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/otherside-hq/27.png" alt="Double Height Living" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Double Height Living</h3>
+                    <p>Spatial core with suspended swing. The iconic double-height living space with its suspended swing forms the heart of the villa. This spatial drama, combined with carefully orchestrated natural light, creates an atmosphere of openness and wonder that invites relaxation and contemplation.</p>
+                </div>
+            </div>
+
+            <!-- Image 3: Interior Details -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/otherside-hq/28.png" alt="Interior Details" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Interior Details</h3>
+                    <p>Moon-inspired aesthetic elements. Soft neutral tones of whites, creams, and soft greys form the foundation, while subtle blue accents echo the night sky. Every material selection, from wall finishes to furnishings, reinforces the serene, moonlit atmosphere.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Design Concept</h2>
+
+            <!-- Image 4: Villa Interior -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/otherside-hq/26.png" alt="Interior Spaces" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Interior Spaces</h3>
+                    <p>Serene and contemporary design throughout. The villa embraces minimalism while maintaining warmth and livability. Each interior space feels like a quiet sanctuary, designed for those who seek respite from the everyday.</p>
+                </div>
+            </div>
+
+            <!-- Image 5: Design Elements -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/otherside-hq/29.png" alt="Design Elements" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Design Elements</h3>
+                    <p>Layered paneling and materials. Clean lines, layered wall paneling, and controlled material transitions create a calm, cohesive environment. Every design decision is rooted in both concept and comfort, supporting the villa's overall moon-inspired narrative.</p>
+                </div>
+            </div>
+
+            <!-- Image 6: Lighting Design -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/otherside-hq/30.png" alt="Lighting Design" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Lighting Design</h3>
+                    <p>Natural light integration with intentional placement. Carefully positioned openings flood the villa with natural light during the day, while thoughtfully designed artificial lighting creates a luminous atmosphere at night, echoing the gentle glow of the moon.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>A Serene Escape</h2>
+            <div style="padding: 2rem; background: white; border-left: 4px solid var(--primary);">
+                <p>The Otherside Weekend Villa represents the perfect balance between architectural sophistication and comfortable living. It's a space designed for those who seek respite from the everyday, where every detail contributes to a sense of peace and wonder.</p>
+                <p>From the moon-inspired color palette to the iconic suspended swing, every element tells a story of thoughtful design and deep understanding of what makes a space truly special.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kalaarti Studio. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Every wall tells a story</p>
+    </footer>
+</body>
+</html>

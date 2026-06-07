@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(ls -lh /Users/sumer/Pictures/Aarti/)",
+      "Bash(\n# Create directory and copy SGN images\nmkdir -p \"/Users/sumer/Documents/Kalaaarti Studio/images/sgn-office-high-res\"\ncp \"/Users/sumer/Pictures/Aarti /SGN/\"*.png \"/Users/sumer/Documents/Kalaaarti Studio/images/sgn-office-high-res/\"\n\necho \"✅ High-quality SGN images copied!\"\nls -lh \"/Users/sumer/Documents/Kalaaarti Studio/images/sgn-office-high-res/\"\n)",
+      "Bash(open \"http://localhost:8000/sgn-office.html\" -a \"Google Chrome\")",
+      "Bash(open \"http://localhost:8000/shrushti-2bhk.html\" -a \"Google Chrome\")",
+      "Bash(cp -r \"/Users/sumer/Pictures/Aarti /SGN\" \"/Users/sumer/Documents/Kalaaarti Studio/images/sgn-hq\")",
+      "Bash(cp -r \"/Users/sumer/Pictures/Aarti /Shrushti\" \"/Users/sumer/Documents/Kalaaarti Studio/images/shrushti-hq\")",
+      "Bash(cp -r \"/Users/sumer/Pictures/Aarti /OTHERSIDE WEEKAND  VILLA\" \"/Users/sumer/Documents/Kalaaarti Studio/images/otherside-hq\")",
+      "Bash(open \"http://localhost:8000/one-world-3bhk.html\" -a \"Google Chrome\")",
+      "Bash(open \"http://localhost:8000\" -a \"Google Chrome\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "Bash(find /Users/sumer/Documents -name \"index.html\" -type f)",
+      "mcp__Claude_in_Chrome__navigate",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(python3 /tmp/update_hero_buttons.py)",
+      "Bash(python3 /tmp/remove_contact_css.py)",
+      "Bash(python3 /tmp/remove_contact_nav.py)",
+      "Bash(python3 /tmp/restore_contact_section.py)",
+      "Bash(python3 /tmp/restore_contact_css.py)",
+      "Bash(python3 /tmp/remove_form_css_js.py)"
+    ]
+  }
+}

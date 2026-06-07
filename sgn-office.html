@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGN Office | Kalaarti Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B1A1A;
+            --cream: #F5F1ED;
+            --dark: #1a1a1a;
+            --light-gray: #e8e8e8;
+            --accent-blue: #4A5859;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Header */
+        .project-header {
+            margin-top: 100px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, var(--cream) 0%, #f9f6f3 100%);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .project-header h1 {
+            margin-bottom: 1rem;
+        }
+
+        .project-meta-header {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 2px;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .introduction {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: white;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-item-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Back button */
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .project-header {
+                padding: 2rem 5%;
+                margin-top: 80px;
+            }
+
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-meta-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Kalaarti Studio</a>
+        <ul class="nav-links">
+            <li><a href="index.html#portfolio">Back to Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <a href="index.html#portfolio" class="back-button">← Back to Portfolio</a>
+        <h1>SGN Office</h1>
+        <div class="project-meta-header">
+            <div class="meta-item">
+                <div class="meta-label">Location</div>
+                <div class="meta-value">Ahmedabad</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Area</div>
+                <div class="meta-value">1880 sq.ft.</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Type</div>
+                <div class="meta-value">Office</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Status</div>
+                <div class="meta-value">Completed</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="project-content">
+        <div class="section">
+            <div class="introduction">
+                <p>This office project is designed as a modern workspace that encourages openness, efficiency, and collaboration. The layout is organized into distinct functional zones, allowing smooth movement while maintaining visual connection across the office.</p>
+                <p>Metal and glass partitions are used as key design elements to define spaces without enclosing them. These partitions enhance transparency, support natural light flow, and create a sense of openness. A consistent blue-toned palette, combined with clean metal detailing, adds visual balance and reinforces a calm, focused, and work-friendly environment.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Design Highlights</h2>
+
+            <!-- Image 1 -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/6.png" alt="Office Layout" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Office Layout</h3>
+                    <p>Modern workspace with functional zones and visual connectivity. This carefully planned layout encourages smooth movement and collaboration while maintaining visual connection across the entire office space.</p>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/7.png" alt="Design Elements" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Design Elements</h3>
+                    <p>Metal and glass partitions with clean detailing create visual transparency while defining functional spaces. The modular system allows flexibility while maintaining the cohesive aesthetic throughout the office.</p>
+                </div>
+            </div>
+
+            <!-- Image 3 -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/8.png" alt="Color Palette" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Color Palette</h3>
+                    <p>Blue-toned palette for calm and focused environment. The carefully selected colors work together to create a professional atmosphere that promotes concentration and collaboration.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+
+            <!-- Image 4: Waiting Area -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/9.png" alt="Waiting Area" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Waiting Area</h3>
+                    <p>The entrance and waiting area feature a CNC-cut metal logo mounted on a textured wall, creating a strong brand focal point. The adjoining passage wall incorporates a customized map installation representing the company's global presence through a precise, geometric small-square design. Employee locker units are finished in coordinated shades of blue.</p>
+                </div>
+            </div>
+
+            <!-- Image 5: Workstation Ceiling -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/10.png" alt="Workstation Ceiling" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Workstation Ceiling</h3>
+                    <p>An exposed metal grid ceiling is used to achieve a clean, modern look while maintaining full floor-to-ceiling height. The grid integrates LED panel lighting and concealed ducted air-conditioning system, ensuring efficient lighting and cooling throughout the workspace.</p>
+                </div>
+            </div>
+
+            <!-- Image 6: Employee Lockers -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/11.png" alt="Employee Lockers" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Employee Lockers</h3>
+                    <p>Dedicated storage solutions for employees are thoughtfully integrated into the design. The locker units maintain visual harmony with the overall color palette, using coordinated shades of blue to reinforce the calm, professional environment. Each unit is designed for both functionality and aesthetic appeal.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Functional Spaces</h2>
+
+            <!-- Image 7: Partition System -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/6.png" alt="Partition System" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Partition System</h3>
+                    <p>A metal-framed partition system with a metal door is used to define the workstation area while maintaining visual openness. Integrated boxes within the partition provide dedicated space for decorative units, adding functionality without compromising the clean, industrial aesthetic. This creates a professional yet collaborative environment.</p>
+                </div>
+            </div>
+
+            <!-- Image 8: Workstations -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/7.png" alt="Workstations" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Workstations</h3>
+                    <p>The workstations are thoughtfully designed to foster collaboration while maintaining individual focus areas. Open layouts with minimal obstruction encourage team communication, while the careful organization of furniture and materials ensures efficient workflow. The consistent color palette and clean lines reinforce a professional, welcoming workspace.</p>
+                </div>
+            </div>
+
+            <!-- Image 9: Meeting Area -->
+            <div style="margin-bottom: 3rem;">
+                <img src="images/sgn-hq/12.png" alt="Meeting Area" style="width: 100%; max-height: 600px; object-fit: contain; display: block; margin-bottom: 1.5rem;">
+                <div style="padding: 1.5rem; background: white; border-left: 4px solid var(--primary);">
+                    <h3>Meeting & Collaboration Areas</h3>
+                    <p>Dedicated meeting spaces complement the open office design, providing areas for focused discussions and team meetings. These spaces maintain the same design language with clean lines, quality finishes, and the signature blue-toned palette. The thoughtful integration of lighting and materials creates an environment conducive to productive collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kalaarti Studio. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">Every wall tells a story</p>
+    </footer>
+</body>
+</html>
