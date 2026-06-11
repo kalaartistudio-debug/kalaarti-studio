@@ -561,15 +561,28 @@
         }
 
         .project-image {
-            height: 250px;
+            height: 300px;
             background: linear-gradient(135deg, var(--light-gray), #ddd);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #999;
+            color: white;
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 300;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            z-index: -1;
         }
 
         .project-info {
@@ -998,7 +1011,7 @@
         <h2>Featured Projects</h2>
         <div class="portfolio-grid">
             <a href="otherside-villa.html" class="project-card scroll-reveal">
-                <div class="project-image">🌙</div>
+                <div class="project-image" style="background: url('images/Preview%20Images%20/Other%20Side%20.jpeg') center/cover no-repeat;"></div>
                 <div class="project-info">
                     <h3>Otherside Weekend Villa</h3>
                     <p>A serene contemporary retreat inspired by moonlight. Features double-height living with suspended swing, natural light, and subtle blue accents for a calm, cohesive environment.</p>
@@ -1012,7 +1025,7 @@
             </a>
 
             <a href="shrushti-2bhk.html" class="project-card scroll-reveal">
-                <div class="project-image">🏠</div>
+                <div class="project-image" style="background: url('images/Preview%20Images%20/Shrusti%20.jpeg') center/cover no-repeat;"></div>
                 <div class="project-info">
                     <h3>Shrushti 2BHK</h3>
                     <p>A calm, contemporary residential design featuring soft neutrals, warm wood tones, and subtle color accents. Clean lines and textured elements create a warm, inviting living space.</p>
@@ -1026,7 +1039,7 @@
             </a>
 
             <a href="sgn-office.html" class="project-card scroll-reveal">
-                <div class="project-image">🏢</div>
+                <div class="project-image" style="background: url('images/Preview%20Images%20/SGN.jpeg') center/cover no-repeat;"></div>
                 <div class="project-info">
                     <h3>SGN Office</h3>
                     <p>A modern workspace designed for openness, efficiency, and collaboration with metal and glass partitions creating visual transparency and a calm work environment.</p>
@@ -1040,7 +1053,7 @@
             </a>
 
             <a href="one-world-3bhk.html" class="project-card scroll-reveal">
-                <div class="project-image">🏡</div>
+                <div class="project-image" style="background: url('images/Preview%20Images%20/One%20world%20.jpeg') center/cover no-repeat;"></div>
                 <div class="project-info">
                     <h3>One World 3BHK</h3>
                     <p>Modern Indian design approach with neutral palette of beige, brown, and warm grey. Features black marble finish elements and selective bright colors for vibrancy.</p>

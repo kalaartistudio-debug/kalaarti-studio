@@ -22,7 +22,12 @@
       "Bash(python3 /tmp/remove_contact_nav.py)",
       "Bash(python3 /tmp/restore_contact_section.py)",
       "Bash(python3 /tmp/restore_contact_css.py)",
-      "Bash(python3 /tmp/remove_form_css_js.py)"
+      "Bash(python3 /tmp/remove_form_css_js.py)",
+      "Bash(python3 /tmp/upgrade_project_images.py)",
+      "Bash(python3 /tmp/update_project_images.py)",
+      "Bash(python3 /tmp/fix_image_paths.py)",
+      "Bash(python3 /tmp/fix_correct_image_paths.py)",
+      "Bash(python3 /tmp/fix_trailing_space.py)"
     ]
   }
 }
