@@ -813,6 +813,7 @@
 
             h1 {
                 font-size: 2.5rem;
+                margin-bottom: 0.8rem;
             }
 
             h2 {
@@ -821,23 +822,61 @@
 
             .hero {
                 margin-top: 70px;
-                padding: 3rem 5%;
+                padding: 2.5rem 5%;
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
                 height: auto;
+                min-height: auto;
+            }
+
+            .hero::before {
+                width: 400px;
+                height: 400px;
+                top: -30%;
+                right: -20%;
+            }
+
+            .hero::after {
+                width: 300px;
+                height: 300px;
+                bottom: -15%;
+                left: -15%;
+            }
+
+            .hero-subtitle {
+                font-size: 0.8rem;
+                margin-bottom: 0.8rem;
             }
 
             .hero .tagline {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.8rem;
+                max-width: 100%;
             }
 
             .hero-image-frame {
-                height: 400px;
+                height: 350px;
+                width: 100%;
+            }
+
+            .hero-image-container {
+                height: auto;
             }
 
             .hero-cta-group {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: stretch;
+                width: 100%;
+            }
+
+            .hero-cta-group .cta-button {
+                width: 100%;
+                text-align: center;
             }
 
             .about-content {
@@ -847,6 +886,10 @@
 
             .about-text {
                 padding-right: 0;
+            }
+
+            .about-text h2 {
+                font-size: 1.8rem;
             }
 
             .about-image {
@@ -859,6 +902,10 @@
 
             .stats {
                 flex-direction: column;
+            }
+
+            .stat {
+                gap: 1.5rem;
             }
 
             .services-grid {
@@ -879,26 +926,84 @@
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.8rem;
+            nav {
+                padding: 0.8rem 5%;
             }
 
             .logo {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.6rem;
+                line-height: 1.2;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+                font-size: 0.75rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                margin-top: 60px;
+                padding: 2rem 5%;
+                gap: 1.5rem;
+            }
+
+            .hero::before {
+                width: 250px;
+                height: 250px;
+                top: -20%;
+                right: -15%;
+            }
+
+            .hero::after {
+                width: 200px;
+                height: 200px;
+                bottom: -10%;
+                left: -10%;
+            }
+
+            .hero-subtitle {
+                font-size: 0.7rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .hero .tagline {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+                margin-bottom: 1.3rem;
+                line-height: 1.6;
+            }
+
+            .hero-image-frame {
+                height: 280px;
             }
 
             .cta-button {
-                padding: 0.8rem 1.8rem;
-                font-size: 0.9rem;
+                padding: 0.7rem 1.5rem;
+                font-size: 0.85rem;
+                width: 100%;
+                text-align: center;
             }
 
             .about,
@@ -906,7 +1011,45 @@
             .portfolio,
             .skills,
             .contact {
-                padding: 4rem 5%;
+                padding: 3rem 5%;
+            }
+
+            .about-text h2 {
+                font-size: 1.6rem;
+            }
+
+            .about-text p {
+                font-size: 0.9rem;
+            }
+
+            .about-image {
+                height: 280px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+                min-width: 60px;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+
+            .project-image {
+                height: 250px;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .service-card p {
+                font-size: 0.9rem;
             }
         }
     </style>
